@@ -1,4 +1,7 @@
 import time
+
+from selenium.common import NoSuchElementException
+
 from Atid_store.Test.Base_test.Base import *
 from Atid_store.Test.Base_test.Locatores import *
 
@@ -294,3 +297,42 @@ class Test_e2e(BaseTest):
                                            "//h3[contains(text(),'Have any Queries? We're here to help.')]").text
         assert product_name == "Have any Queries? We're here to help."
         super().tear_down()
+#
+# PRICE = "//span[2]/span[1]/bdi[1]"
+# SALE = "//div[1]/ul[1]/li[6]/div[1]/span[1]"
+#
+#
+# class Test_me():
+#     def test(self):
+#         driver = webdriver.Chrome()
+#         driver.get(Website_sale)
+#         driver.maximize_window()
+#         time.sleep(2)
+#         driver.find_element(By.XPATH, men_sale).click()
+#         nav = driver.find_element(By.XPATH, Nav_ul)
+#         na = nav.find_elements(By.TAG_NAME, Na_il)
+#         for n in na:
+#             price = n.find_element(By.XPATH, PRICE)
+#             sale = self.is_mine('onsale', n)
+#             a = price.text
+#             convert = a[:-2]
+#             if float(convert) > 72.00 and sale == "sale!":
+#                 time.sleep(5)
+#                 n.click()
+#                 time.sleep(5)
+#                 break
+#         driver.implicitly_wait(5)
+#         cart = driver.title
+#         assert cart == 'Men – ATID Demo Store'
+#         # driver.find_element(By.XPATH, "//button[contains(text(),'Add to cart')]").click()
+#         # time.sleep(5)
+#         # driver.find_element(By.XPATH, "//body/div[@id= 'page']/div[@id='content J/div[1]/div[1]/main[1]/divi11/div|11/a1v|11/ar11").click()
+#         # time.sleep(5)
+#         # cart = driver.title
+#         # assert cart == "cart - atid demo store"
+#     def is_mine(self, test, webexcuter):
+#         try:
+#             return webexcuter.find_element(By.CLASS_NAME, test).text
+#         except NoSuchElementException:
+#             return ''
+#         driver.close()
