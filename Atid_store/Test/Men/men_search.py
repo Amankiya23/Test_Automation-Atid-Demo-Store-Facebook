@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Test_search(BaseTest):
 
-# Search a non existing product
+# Search existing product with keys and webdriverwait
     def test_men_search(self):
         driver = super().test_init()
         time.sleep(2)
@@ -24,6 +24,8 @@ class Test_search(BaseTest):
         product_name = driver.find_element(By.XPATH, "//h1[contains(text(),'Black Hoodie')]").text
         assert product_name == "Black Hoodie"
         super().tear_down()
+
+# Search existing product
     def test_men_search_normal(self):
         driver = super().test_init()
         time.sleep(2)
@@ -34,6 +36,8 @@ class Test_search(BaseTest):
         search.send_keys("Black Hoodie")
         driver.find_element(By.XPATH, "//body/div[@id='page']/div[@id='content']/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/button[1]/*[1]").click()
         time.sleep(5)
+        product_name = driver.find_element(By.XPATH, "//h1[contains(text(),'Black Hoodie')]").text
+        assert product_name == "Black Hoodie"
         super().tear_down()
 
 # Search a non existing product
