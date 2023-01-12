@@ -3,9 +3,10 @@ from Atid_store.Test.Base_test.Base import *
 from selenium.webdriver.common.by import By
 
 
+
 class Test_filter(BaseTest):
 
-# Search a filtered product
+# Search a filtered product with scrool down
     def test_men_scroll(self):
         driver = super().test_init()
         time.sleep(2)
@@ -18,3 +19,4 @@ class Test_filter(BaseTest):
         driver.execute_script("window.scrollBy(0, 100);")
         time.sleep(10)
         super().tear_down()
+
